@@ -7,17 +7,17 @@
     }
   ],
   "hero": {
-    "headline": "Welcome to Tina Grande.",
-    "textline": "This template is filled with sample content to get you started.",
+    "headline": "Leo Prange",
+    "textline": "Copy super incrível que a amanda vai fazer",
     "ctas": [
       {
-        "label": "Read The Blog",
+        "label": "Blog",
         "link": "/blog",
         "primary": true,
         "arrow": true
       },
       {
-        "label": "Contact Us",
+        "label": "Contato",
         "link": "/contact",
         "arrow": false,
         "primary": false
