@@ -12,7 +12,7 @@
     "ctas": [
       {
         "label": "Blog",
-        "link": "/blog",
+        "link": "/posts",
         "primary": true,
         "arrow": true
       },

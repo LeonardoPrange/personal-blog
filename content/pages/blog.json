@@ -1,5 +1,5 @@
 {
-  "path": "/blog",
+  "path": "/posts",
   "title": "Blog",
   "pageType": "list",
   "listType": "post",
