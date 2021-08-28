@@ -16,15 +16,7 @@ jobs:
         node-version: [12.x]
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # prefer to use a full fetch for licensed workflows
-      
-      - uses: jonabc/setup-licensed@v1
-        with:
-          version: '2.x' # required: supports matching based on string equivalence or node-semver range
-          install-dir: /path/to/install/at # optional: defaults to /usr/local/bin
-          github_token: "${{ secrets.PERSONAL_TOKEN }}"
-      
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
