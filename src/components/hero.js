@@ -8,7 +8,7 @@ export const Hero = ({ hero }) => {
   const [text, setText] = useState('');
 
   const typeWriter = (text, i = 0) => {
-    if (i < hero.textline.length) {
+    if (i < hero.textline?.length) {
       setText(text.slice(0, i + 1));
       setTimeout(() => {
         typeWriter(text, i + 1);
