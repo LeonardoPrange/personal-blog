@@ -1,6 +1,6 @@
 ---
 title: My First Post
-path: /posts/my-first-post
+path: /blog/my-first-post
 date: '2019-04-04'
 type: post
 authors:

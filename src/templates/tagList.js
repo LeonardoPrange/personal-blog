@@ -16,9 +16,9 @@ import { Link } from "gatsby"
 import { PageLayout } from "../components/pageLayout"
 
 /**
- * Template for list pages of posts with a tag.
+ * Template for list pages of blog with a tag.
  * 
- * Located by default at /posts/tag/tag-text
+ * Located by default at /blog/tag/tag-text
  */
 export default function TagList({ data, pageContext }) {
   const [page] = useLocalJsonForm(data.page, ListForm)

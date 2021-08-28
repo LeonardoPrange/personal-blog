@@ -52,7 +52,7 @@ const CreatePostButton = createRemarkButton({
           title: form.title,
           date: new Date(),
           type: "post",
-          path: `/posts/${slug}`,
+          path: `/blog/${slug}`,
           draft: true,
         })
       }, 1000)

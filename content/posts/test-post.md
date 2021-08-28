@@ -1,6 +1,6 @@
 ---
 title: Nostris blandis iacuit
-path: /posts/nostris-blandis
+path: /blog/nostris-blandis
 date: '2019-04-06'
 type: post
 draft: false

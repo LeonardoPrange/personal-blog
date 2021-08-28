@@ -1,6 +1,6 @@
 ---
 title: Exemplo de Post
-path: /posts/introducing-tina-grande
+path: /blog/introducing-tina-grande
 date: '2019-11-06T00:00:00.000Z'
 type: post
 authors:

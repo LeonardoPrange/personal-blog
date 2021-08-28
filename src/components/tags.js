@@ -10,9 +10,9 @@ export const ListTags = ({ tagIDs }) => {
   const tagList = tags.map((tag, index) => {
     const slug = ConvertTagTextToSlug(tag.text);
     if (tags.length === index + 1) {
-      return <><Link to={`/posts/tag/${slug}`}>{tag.text}</Link></>
+      return <><Link to={`/blog/tag/${slug}`}>{tag.text}</Link></>
     } else {
-      return <><Link to={`/posts/tag/${slug}`}>{tag.text}</Link>, </>
+      return <><Link to={`/blog/tag/${slug}`}>{tag.text}</Link>, </>
     }
   })
 

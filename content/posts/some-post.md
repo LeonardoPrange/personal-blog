@@ -1,6 +1,6 @@
 ---
 title: Artificis restabat ducere
-path: /posts/artificis-restabat
+path: /blog/artificis-restabat
 date: '2019-03-06'
 type: post
 ---

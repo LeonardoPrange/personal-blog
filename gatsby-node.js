@@ -207,7 +207,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  // Create a list page at posts/tag/tag-text for each tag
+  // Create a list page at blog/tag/tag-text for each tag
   result.data.tags.tags.forEach(({id, text}) => {
     const tagListTemplate = path.resolve(`src/templates/tagList.js`)
 
@@ -220,7 +220,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const postsPerPage = 5
     const numPages = Math.max(Math.ceil(posts.length / postsPerPage), 1)
     const slug = text.toLowerCase().replace(" ", "-") // TODO: Need more complex conversion from tag text to a URI slug.
-    const pagePath = `posts/tag/${slug}`
+    const pagePath = `blog/tag/${slug}`
 
     Array.from({ length: numPages }).forEach((_, i) => {
       const currentPage = i + 1
@@ -233,7 +233,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         component: tagListTemplate,
         context: {
           listType: 'post',
-          slug: '/posts/tag', // The slug for the underlying page.
+          slug: '/blog/tag', // The slug for the underlying page.
           limit: postsPerPage,
           skip: i * postsPerPage,
           numPages: numPages,
