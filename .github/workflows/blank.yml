@@ -17,8 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/labeler@v3
-      with:
-        repo-token: "${{ secrets.PERSONAL_TOKEN }}"
+        with:
+          repo-token: "${{ secrets.PERSONAL_TOKEN }}"
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
