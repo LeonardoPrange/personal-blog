@@ -5,7 +5,7 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+  
   workflow_dispatch:
 
 jobs:
@@ -16,13 +16,17 @@ jobs:
         node-version: [12.x]
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/labeler@v3
+      
+      - uses: jonabc/setup-licensed@v1
         with:
-          repo-token: "${{ secrets.PERSONAL_TOKEN }}"
+          version: '2.x' # required: supports matching based on string equivalence or node-semver range
+          github_token: "${{ secrets.PERSONAL_TOKEN }}"
+      
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+          
       - name: Caching Gatsby
         id: gatsby-cache-build
         uses: actions/cache@v2
@@ -33,7 +37,9 @@ jobs:
           key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
+            
       - name: Installing dependencies
         run: npm install
+        
       - name: Deploy
         run: npm run deploy
