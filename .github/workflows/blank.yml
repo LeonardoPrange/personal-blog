@@ -19,14 +19,14 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x]
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: xmflsct/action-publish-gatsby@v1 # Uses this action to run further steps
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
         with:
-          publishBranch: 'master'
-          token: ${{ secrets.PERSONAL_TOKEN }}
-          name: 'Leo Prange'
-          email: 'leonardoprange@gmail.com'
+          node-version: ${{ matrix.node-version }}
+      - run: npm run publish
