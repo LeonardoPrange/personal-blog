@@ -1,10 +1,24 @@
-import React from "react"
-import styled, { css } from "styled-components"
+import React, { useState, useEffect } from "react"
+import styled, { css, keyframes } from "styled-components"
 import { transparentize } from "polished"
 import { Wrapper, Overlay, LinkButton } from "../components/style"
 import BackgroundImage from "gatsby-background-image"
 
 export const Hero = ({ hero }) => {
+  const [text, setText] = useState('');
+
+  const typeWriter = (text, i = 0) => {
+    if (i < hero.textline.length) {
+      setText(text.slice(0, i + 1));
+      setTimeout(() => {
+        typeWriter(text, i + 1);
+      }, 100);
+    }
+  };
+
+  useEffect(() => {
+    typeWriter(hero.textline);
+  }, []);
   return (
     <HeroWrapper>
       <HeroBackground>
@@ -17,7 +31,7 @@ export const Hero = ({ hero }) => {
         <HeroContent large={hero.large}>
           <Wrapper>
             {hero.headline && <Headline>{hero.headline}</Headline>}
-            {hero.textline && <Textline>{hero.textline}</Textline>}
+            {text && <Textline>{text}</Textline>}
             {hero.ctas && (
               <Actions>
                 {Object.keys(hero.ctas).map(key => {
@@ -101,6 +115,10 @@ export const Headline = styled.h2`
   font-weight: 700;
   text-transform: none;
 `
+const blinkTextCursor = keyframes`
+  from {border-right-color: ${props => props.theme.color.secondary};}
+  to {border-right-color: transparent}
+`;
 
 export const Textline = styled.p`
   font-size: 1.3rem;
@@ -109,11 +127,15 @@ export const Textline = styled.p`
   word-spacing: 1px;
   font-weight: 500;
   text-transform: none;
+  border-right: 2px solid ${props => props.theme.color.secondary};
+  display: inline;
   padding-bottom: 0.3rem;
+  animation: ${blinkTextCursor} 0.7s steps(44) infinite normal;
 `
 
 export const Actions = styled.div`
-  padding-bottom: 0.5rem;
+padding-top: 0.5rem;  
+padding-bottom: 0.5rem;
   > * {
     margin-right: 1rem;
   }
