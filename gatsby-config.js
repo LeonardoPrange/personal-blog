@@ -2,6 +2,7 @@ const theme = require("./content/settings/theme.json")
 const site = require("./content/settings/site.json")
 
 module.exports = {
+  pathPrefix: "/blog",
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
