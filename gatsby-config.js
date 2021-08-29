@@ -122,6 +122,17 @@ module.exports = {
       options: {
         pixelId: "360649015716734",
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        facebookPixel: {
+          pixelId: '360649015716734', // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-facebook-pixel', // default
+        },
+        // defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production']
+      },
+    },
   ],
 }

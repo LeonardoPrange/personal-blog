@@ -15,6 +15,7 @@
     "gatsby-image": "^2.2.29",
     "gatsby-omni-font-loader": "^1.1.1",
     "gatsby-plugin-facebook-pixel": "^1.0.8",
+    "gatsby-plugin-gdpr-cookies": "^2.0.6",
     "gatsby-plugin-layout": "^1.1.13",
     "gatsby-plugin-manifest": "^2.2.23",
     "gatsby-plugin-mdx": "^1.0.53",
